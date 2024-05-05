@@ -2,7 +2,7 @@
 import React from "react";
 import styles from "./ProductCardCat.module.css";
 
-const ProductCard = ({ product, onBuyClick }) => {
+const ProductCardCat = ({ product, onBuyClick }) => {
   return (
     <div className={styles.productCard}>
       <img src={product.imageUrl} alt={product.name} />
@@ -14,4 +14,4 @@ const ProductCard = ({ product, onBuyClick }) => {
   );
 };
 
-export default ProductCard;
+export default ProductCardCat;
