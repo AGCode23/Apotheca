@@ -1,0 +1,12 @@
+.titleBlog1 {
+  color: white !important;
+  margin: 50px 30px;
+}
+
+.customStylesBlog1 {
+  color: white;
+}
+
+.row {
+  --bs-gutter-x: unset; /* Reset the custom property */
+}

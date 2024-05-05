@@ -1,0 +1,35 @@
+.faq-item {
+  margin-bottom: 50px;
+}
+
+.faq-question {
+  font-size: 1.2rem;
+  font-weight: bold;
+  background-color: #e6e6e6;
+  width: 80%;
+  border: none;
+  border-radius: 20px;
+  padding: 10px;
+  cursor: pointer;
+  text-align: left;
+  padding-left: 50px;
+}
+
+.faq-question:hover {
+  background-color: #bbbbbb;
+}
+
+.faq-answer {
+  width: 80%;
+  display: block;
+  background: #f4e3cf;
+  color: black;
+  padding: 10px;
+  border: none;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  padding: 30px;
+  margin: 20px;
+  position: relative;
+  left: 15%;
+}

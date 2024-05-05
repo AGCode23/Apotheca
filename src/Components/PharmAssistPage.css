@@ -1,0 +1,106 @@
+.highlights {
+  font-weight: bold;
+}
+
+.pharmassist-page-header {
+  display: flex;
+  flex-direction: column;
+  color: white;
+  margin-top: 20px;
+}
+
+.pharmassist-page-header .pharmassist-tagline {
+  margin: 10px 45px;
+  margin-bottom: 20px;
+  max-width: 720px;
+}
+
+.pharmassist-list-container {
+  display: flex;
+  flex-direction: column;
+  margin: 0 45px;
+}
+.pharmassist-page-header ul {
+  position: relative;
+  left: 30px;
+}
+
+.header-for-forms {
+  margin-top: 50px;
+  font-style: italic;
+}
+
+.pharmassist-inputs {
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 10%;
+}
+.name-pharmassist,
+.email-pharmassist {
+  flex: 1;
+  padding: 10px;
+}
+
+.name-pharmassist input,
+.email-pharmassist input {
+  width: 100%;
+  height: 40px;
+  border: none;
+  outline: none;
+  padding-left: 10px;
+}
+
+.pharmassist-inputs-b {
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0 10%;
+}
+.title-pharmassist,
+.question-pharmassist {
+  width: 100%;
+  padding: 10px;
+}
+
+.title-pharmassist input,
+.question-pharmassist input {
+  width: 100%;
+  height: 40px;
+  border: none;
+  outline: none;
+  padding-left: 10px;
+}
+
+.question-pharmassist input {
+  height: 100px;
+}
+.submit-to-pharmassist {
+  margin: 0 10%;
+  padding: 10px;
+}
+.submit-to-pharmassist button {
+  /* border: none; */
+  /* outline: none; */
+  /* cursor: pointer; */
+  width: 170px;
+  height: 40px;
+  /* background: #479eb6; */
+  /* color: white; */
+  font-weight: bold;
+}
+
+.pharmassist-footer {
+  text-align: center;
+  color: white;
+  margin: 30px;
+}
+
+.pharmassist-footer h2,
+.pharmassist-footer p {
+  margin: 0 10%;
+  margin-bottom: 10px;
+}

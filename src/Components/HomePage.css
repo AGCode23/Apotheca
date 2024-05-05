@@ -1,0 +1,251 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/*
+  1. Use a more-intuitive box-sizing model.
+*/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+/*
+    2. Remove default margin
+  */
+* {
+  margin: 0;
+}
+/*
+    Typographic tweaks!
+    3. Add accessible line-height
+    4. Improve text rendering
+  */
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  background: #132736;
+}
+/*
+    5. Improve media defaults
+  */
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  /* max-width: 100%; */
+}
+/*
+    6. Remove built-in form typography styles
+  */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+/*
+    7. Avoid text overflows
+  */
+p {
+  overflow-wrap: break-word;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+/*
+    8. Create a root stacking context
+  */
+#root,
+#__next {
+  isolation: isolate;
+}
+
+h1,
+h2 {
+  font-family: "Roboto", sans-serif;
+  font-weight: 700 !important;
+  font-style: normal;
+}
+
+/* Start Here
+
+
+
+
+
+
+  */
+
+.no-bullets {
+  list-style: none;
+}
+
+header {
+  background: #132736;
+}
+
+.cart-icon {
+  scale: 100%;
+}
+
+.home-ads {
+  max-width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  margin: 0 20px;
+  margin-bottom: 30px;
+}
+
+.ads {
+  max-width: 100%;
+  height: auto;
+  margin: 10px 0;
+}
+
+.category {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 5px;
+}
+
+.category-button {
+  width: 120px;
+  height: 40px;
+  font-size: 1.3rem;
+  color: white;
+  background: #132736;
+  border: none;
+  border-radius: 50px;
+  margin: 20px 0;
+}
+
+.home-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin: 0 10px;
+  color: white;
+}
+
+.home-heading h2,
+.home-heading p {
+  margin: 0;
+}
+
+.second-portion {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.product-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 10px;
+  margin-bottom: 0;
+}
+
+.product-container img {
+  width: 70px;
+  height: 70px;
+}
+
+.product-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  width: 25%;
+  height: 250px;
+  background: #dfe3e9;
+  text-align: center;
+  border-radius: 10px;
+  margin: 5px;
+  padding: 5px;
+}
+
+.product-box h3 {
+  font-size: 0.7rem;
+  padding: 5px;
+}
+
+.product-box button {
+  width: 90%;
+  font-size: 0.7rem;
+  margin: 10px;
+  border: none;
+  border-radius: 20px;
+  height: 30px;
+  background: #479eb6;
+}
+
+.carousel-box-home {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 10px 0;
+  margin-bottom: 50px;
+}
+
+.custom-carousel-width {
+  width: 90%;
+}
+
+.product-list-home {
+  margin: 10px;
+}
+
+/* App.module.css */
+.product-list-home {
+  text-align: center;
+}
+
+.scroll-container {
+  overflow: auto;
+  white-space: nowrap;
+  -webkit-overflow-scrolling: touch; /* Enable touch scrolling for iOS */
+  scroll-behavior: smooth; /* Enable smooth scrolling */
+  -webkit-overflow-scrolling: touch; /* Enable touch scrolling for iOS */
+  -ms-overflow-style: -ms-autohiding-scrollbar; /* Hide scrollbars on IE and Edge */
+}
+
+.home-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.home-product-container {
+  width: 90%;
+}
+
+@media (width <= 768px) {
+  .home-heading h2 {
+    font-size: 1.2rem;
+    margin: 0;
+  }
+
+  .home-heading p {
+    font-size: 0.9rem;
+    margin: 0;
+  }
+
+  .category-button {
+    font-size: 1rem;
+    margin: 5px 0;
+    margin-bottom: 20px;
+  }
+}

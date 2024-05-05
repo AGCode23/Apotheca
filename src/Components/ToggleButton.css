@@ -1,0 +1,41 @@
+.button-container-blog {
+  display: flex;
+  justify-content: flex-end;
+  padding: 10px 5%;
+}
+
+.dropdown-blog {
+  position: relative;
+  width: 25%;
+}
+
+.dropbtn {
+  width: 100%;
+  background-color: white;
+  padding: 10px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+  border-radius: 20px;
+}
+
+.dropdown-content-blog {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 100%;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  border-radius: 20px;
+}
+
+.dropdown-content-blog a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content-blog {
+  display: block;
+}

@@ -1,0 +1,5 @@
+/* ProductList.module.css */
+.productList {
+  display: flex;
+  flex-wrap: wrap;
+}

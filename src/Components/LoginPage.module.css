@@ -1,0 +1,120 @@
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  animation: fadeIn 0.5s ease-out;
+}
+
+.modalOverlay.fadeOut {
+  animation: fadeOut 0.52s ease-out;
+}
+
+.modalContent {
+  position: relative;
+  background: white;
+  border-radius: 5px;
+  width: 400px; /* Fixed width */
+  overflow: hidden; /* Important to hide the non-active page */
+  z-index: 1001;
+  box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
+}
+
+.modalPageContainer {
+  display: flex;
+  width: 800px; /* Twice the width of modalContent */
+  transition: transform 0.5s ease-in-out;
+}
+
+.modalPage {
+  width: 400px; /* Each page has the width of modalContent */
+  padding: 60px;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #1f1f1f;
+}
+
+.formLogin {
+  height: 50px;
+  border-radius: 5px;
+  border: solid #1f1f1f80 1px;
+  padding: 10px;
+  width: 100%;
+}
+
+.containerForLogin {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+  max-width: 350px;
+  gap: 20px;
+  text-align: start;
+}
+
+.containerForLogin h2 {
+  color: #36788b;
+}
+
+.loginButtonStyles {
+  border: none;
+  outline: none;
+  background: #479eb6;
+  padding: 10px;
+  border-radius: 5px;
+  color: white;
+  font-size: 1.3rem;
+  width: 100%;
+}
+
+.loginButtonStyles:hover {
+  background: #36788b;
+}
+
+.navTabs {
+  display: flex;
+  justify-content: space-around;
+}
+
+.tab {
+  background: none;
+  border: none;
+  outline: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 16px;
+  color: #479eb6;
+}
+
+.activeTab {
+  font-weight: bold;
+  color: #36788b;
+  border-bottom: 2px solid #479eb6;
+}

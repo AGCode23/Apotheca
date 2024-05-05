@@ -1,0 +1,11 @@
+.productList {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 10px;
+  padding: 20px 0;
+  overflow-x: auto; /* Ensure scrolling is enabled */
+  overflow-y: hidden;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  color: white;
+}

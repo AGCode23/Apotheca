@@ -1,0 +1,170 @@
+import React, { useState } from "react";
+import styles from "./Header.module.css";
+import { NavLink } from "react-router-dom";
+import {
+  CartIcon,
+  MenuBar,
+  NotifIcon,
+  Logo,
+  PharmLogo,
+  ProfLogo,
+  WishLogo,
+} from "../Assets/Images/index";
+import LoginPage from "./LoginPage";
+
+const Header = () => {
+  const handleClick = () => {
+    window.location.href = "/pharmassist";
+  };
+
+  const [searchTerm, setSearchTerm] = useState("");
+
+  const handleSearchChange = (event) => {
+    setSearchTerm(event.target.value);
+  };
+
+  const [isOpen, setIsOpen] = useState(false);
+  const toggleModal = () => setIsOpen(!isOpen);
+
+  return (
+    <header>
+      <nav>
+        <div className="home-flex">
+          <div className="icon-container mobile-only">
+            <img src={MenuBar} alt="menu-bar" />
+          </div>
+          <div className="apotheca-logo desktop-only">
+            <div className="logo-name-cont">
+              <img src={Logo} alt="logo" />
+              <div className="apotheca-name">
+                <h1>Apotheca</h1>
+                <h3>Online Medical Store</h3>
+              </div>
+            </div>
+          </div>
+          <div className="search">
+            {/* Visually hidden label for accessibility */}
+            <label
+              htmlFor="searchInput"
+              style={{
+                position: "absolute",
+                left: "-10000px",
+                top: "auto",
+                width: "1px",
+                height: "1px",
+                overflow: "hidden",
+              }}
+            >
+              Search:
+            </label>
+            <input
+              type="text"
+              id="searchInput"
+              name="search"
+              value={searchTerm}
+              onChange={handleSearchChange}
+              placeholder="Search here ..."
+            />
+          </div>
+          <div
+            className="pharmassist desktop-only"
+            role="button"
+            tabIndex={0}
+            onClick={handleClick}
+          >
+            <div className="pharm-logo">
+              <img src={PharmLogo} alt="PharmLogo" />
+            </div>
+            <div className="pharm-assist">
+              <h2>PharmAssist</h2>
+            </div>
+          </div>
+          <div className="icon-container desktop-only">
+            <img src={WishLogo} alt="wishlist" />
+          </div>
+          <div className="icon-container">
+            <img className="cart-icon" src={CartIcon} alt="cart" />
+          </div>
+          <div className="account-section desktop-only">
+            <div className="auth">
+              <h2>Account</h2>
+              <h3><button onClick={toggleModal} className={styles.authButton}>Login/Signup</button></h3>
+              <LoginPage isOpen={isOpen} close={toggleModal} />
+            </div>
+            <div className="profile-logo">
+              <img src={ProfLogo} alt="profile-logo" />
+            </div>
+          </div>
+          <div className="icon-container mobile-only">
+            <img src={NotifIcon} alt="notification" />
+          </div>
+        </div>
+      </nav>
+      <div className="desktop-menu desktop-only">
+        <h2>
+          <NavLink
+            exact
+            to="/"
+            className={({ isActive }) =>
+              isActive ? styles.active : styles.notActive
+            }
+          >
+            Home
+          </NavLink>
+        </h2>
+        <h2>
+          <NavLink
+            to="/category"
+            className={({ isActive }) =>
+              isActive ? styles.active : styles.notActive
+            }
+          >
+            Categories
+          </NavLink>
+        </h2>
+        <h2>
+          <NavLink
+            to="/generic"
+            className={({ isActive }) =>
+              isActive ? styles.active : styles.notActive
+            }
+          >
+            Apotheca Generics
+          </NavLink>
+        </h2>
+        <h2>
+          <NavLink
+            to="/blog"
+            className={({ isActive }) =>
+              isActive ? styles.active : styles.notActive
+            }
+          >
+            Blog
+          </NavLink>
+        </h2>
+        <h2>
+          <NavLink
+            to="/faqs"
+            className={({ isActive }) =>
+              isActive ? styles.active : styles.notActive
+            }
+          >
+            Faqs
+          </NavLink>
+        </h2>
+        <h2>
+          <NavLink
+            to="/support"
+            className={({ isActive }) =>
+              isActive ? styles.active : styles.notActive
+            }
+          >
+            Support
+          </NavLink>
+        </h2>
+      </div>
+    </header>
+  );
+};
+
+export default Header;

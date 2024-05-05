@@ -1,0 +1,57 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.desktop-menu .temp {
+  color: #58a8a9;
+}
+
+.blog-image {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 10px 110px;
+  color: white;
+  text-align: center;
+}
+
+.blog-image img {
+  margin: 10px 0;
+  margin-top: 0;
+}
+
+.doctor-name {
+  font-size: 1.2rem;
+}
+
+#blog-disclaimer {
+  font-size: 0.8rem;
+  margin: 20px 0;
+}
+
+.text-highlight {
+  font-style: italic;
+  font-weight: bold;
+}
+
+.button-box-blog {
+  display: flex;
+  justify-content: flex-end;
+  padding: 20px;
+}
+
+.button-1-blog {
+  width: 400px;
+  background-color: white;
+  padding: 10px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+  border-radius: 20px;
+}
+
+.custom-dropdown-width {
+  width: 400px;
+}

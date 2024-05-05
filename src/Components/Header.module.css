@@ -1,0 +1,336 @@
+/* For Grid Container */
+.homeGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 0.5fr;
+}
+
+.homeGrid h1,
+.homeGrid h2,
+.homeGrid h3,
+.homeGrid h4,
+.homeGrid h5,
+.homeGrid h6,
+.homeGrid p {
+  color: white;
+}
+
+/* Primary Header CSS */
+
+.headerPrimaryNav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 10px;
+}
+
+/* Logo CSS */
+.apothecaLogo {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+.homeLogoContainer {
+  display: flex;
+  align-items: center;
+}
+
+.apothecaTitle {
+  display: flex;
+  flex-direction: column;
+}
+
+.apothecaTitle h2 {
+  font-size: 2rem;
+}
+
+.apothecaTitle h3 {
+  font-size: 1rem;
+}
+
+/* Search CSS */
+.headerSearch label {
+  display: none;
+}
+
+.headerSearch input {
+  width: 300px;
+  height: 40px;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+  padding: 10px;
+}
+
+.headerSearch input::placeholder {
+  font-style: italic;
+}
+
+/* PharmAssist Button CSS */
+.pharmAssistButton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #479eb6;
+  width: 100px;
+  padding: 10px;
+  gap: 3px;
+  border-radius: 5px;
+}
+
+.pharmAssistButton:hover {
+  background: #36788b;
+}
+
+.pharmAssist {
+  display: flex;
+  position: relative;
+  top: 3.1px;
+}
+
+.pharmAssist h3 {
+  font-size: 0.8rem;
+}
+
+/* Enclosing Responsive CSS */
+.enclosingForResponsive {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-left: 50px;
+  width: 100%;
+}
+
+/* Button Container css */
+.headerButtonContainer {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+/* Auth Container CSS */
+.headerAuth {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.headerAuth h2 {
+  font-size: 1.5rem;
+}
+
+.headerAuth h3 {
+  font-size: 1rem;
+}
+
+.authButton {
+  border: none;
+  border-radius: 5px;
+  background: #479eb6;
+  padding: 10px;
+  color: white;
+}
+
+.authButton:hover {
+  background: #36788b;
+}
+
+/* Sub Nav CSS */
+.headerSubNav {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+}
+
+.headerSubNav h2 {
+  font-size: 1.5rem;
+}
+
+.active {
+  color: #68c5c3;
+  text-decoration: none;
+}
+
+.notActive {
+  color: white;
+  text-decoration: none;
+}
+
+.active:hover {
+  color: #55a19f;
+}
+
+.notActive:hover {
+  color: #b3b3b3;
+}
+
+/* Mobile nav here  */
+
+.mobileNavbar {
+  position: relative; /* Position relative to its parent */
+}
+
+.hamburgerMenu {
+  cursor: pointer;
+  padding: 5px;
+}
+
+.hamburgerIcon {
+  width: 25px;
+  height: 3px;
+  background-color: #fff;
+  margin: 5px 0;
+  transition: all 0.3s ease;
+}
+
+.open {
+  transform: rotate(45deg);
+}
+
+.navbar {
+  padding: 10px 30px;
+  z-index: 1000; /* Ensure it's above other content */
+  overflow: hidden;
+  box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
+}
+
+.navbar a {
+  color: #fff;
+  text-decoration: none;
+  padding: 8px;
+  display: block; /* Make each link a block element */
+}
+
+.navbar a:hover {
+  background-color: #555;
+}
+
+@keyframes slideDown {
+  from {
+    max-height: 0;
+  }
+  to {
+    max-height: 500px; /* Set to a value greater than your navbar's potential height */
+  }
+}
+
+/* Animation for closing the navbar */
+@keyframes slideUp {
+  from {
+    max-height: 500px; /* Set to a value greater than your navbar's potential height */
+  }
+  to {
+    max-height: 0;
+  }
+}
+
+.navbar.opened {
+  animation: slideDown 1s ease forwards;
+}
+
+.navbar.closed {
+  animation: slideUp 1s ease forwards;
+}
+
+@media (max-width: 2600px) {
+  .headerSearch input {
+    width: 800px;
+  }
+
+  .headerSubNav {
+    justify-content: flex-start;
+    margin-left: 30px;
+  }
+}
+
+@media (max-width: 1520px) {
+  .headerSearch input {
+    width: 400px;
+  }
+}
+
+@media (max-width: 1075px) {
+  .headerSearch input {
+    width: 300px;
+  }
+}
+
+@media (width >= 1001px) {
+  .mobileNavbar {
+    display: none;
+  }
+}
+
+@media (max-width: 1000px) {
+  .homeGrid {
+    grid-template-rows: 1fr 0;
+  }
+
+  .headerPrimaryNav {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .homeLogoContainer img {
+    height: 40px;
+  }
+
+  .apothecaTitle h2 {
+    position: relative;
+    top: 7px;
+    font-size: 1.3rem;
+  }
+
+  .apothecaTitle h3 {
+    display: none;
+  }
+
+  .enclosingForResponsive {
+    margin-top: 10px;
+    margin-left: 10px;
+    gap: 20px;
+  }
+
+  .headerSearch {
+    flex-basis: 50%;
+  }
+
+  .headerSearch input {
+    width: 100%;
+    height: 25px;
+  }
+
+  .headerButtonContainer {
+    margin-right: 20px;
+    flex-basis: 50%;
+    justify-content: flex-end;
+  }
+
+  .pharmAssistButton {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+  }
+
+  .pharmAssist {
+    display: none;
+  }
+
+  .headerAuth {
+    display: none;
+  }
+
+  .iconContainer img {
+    height: 25px;
+  }
+
+  .headerSubNav {
+    display: none;
+  }
+
+  .toHideElement {
+    display: none;
+  }
+}

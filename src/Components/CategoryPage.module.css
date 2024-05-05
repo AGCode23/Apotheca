@@ -1,0 +1,22 @@
+.navContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 20px 0;
+  margin-bottom: 100px;
+}
+
+.mainNav {
+  display: flex;
+  width: 90%;
+  color: white;
+}
+
+.leftNav {
+  flex-basis: 25%;
+}
+
+.rightNav {
+  display: flex;
+  flex-basis: 75%;
+}
