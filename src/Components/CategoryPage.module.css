@@ -13,10 +13,26 @@
 }
 
 .leftNav {
-  flex-basis: 25%;
+  flex-basis: 30%;
+  background: #155c6e;
+  border: black solid 1px;
+  border-radius: 5px;
+  padding-top: 30px;
+}
+
+.listSideNav {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  list-style-type: none;
+}
+
+.listSideNav li {
+  margin-left: 20px;
 }
 
 .rightNav {
   display: flex;
-  flex-basis: 75%;
+  margin-left: 30px;
+  flex-basis: 70%;
 }

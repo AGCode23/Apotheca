@@ -18,6 +18,12 @@ const CategoryPage = () => {
               <li>Anti-asthma & COPD</li>
               <li>Cholesterol</li>
             </ul>
+            <ul className={styles.listSideNav}>
+              <h2>Over-the-Counter</h2>
+              <li>Allergies</li>
+              <li>Cough and Colds</li>
+              <li>Pain Reliever</li>
+            </ul>
           </div>
           <div className={styles.rightNav}>
             <ProductListCat onBuyClick={handleBuyClick} />
