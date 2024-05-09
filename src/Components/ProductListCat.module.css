@@ -1,5 +1,48 @@
-/* ProductList.module.css */
 .productList {
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.pagination {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  padding: 0;
+  margin-top: 20px;
+}
+
+.pagination li {
+  margin: 0 5px;
+  cursor: pointer;
+  padding: 5px 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.pagination li:hover {
+  background-color: #f0f0f0;
+}
+
+.pagination .active {
+  background-color: #007bff;
+  color: #fff;
+}
+
+.fixedButton {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.fixedButton:hover {
+  background-color: #0056b3;
 }

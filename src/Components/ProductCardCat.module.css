@@ -1,10 +1,12 @@
 /* ProductCard.module.css */
 .productCard {
+  position: relative;
   border: 1px solid #ddd;
   border-radius: 8px;
   padding: 20px;
   margin: 10px;
   width: 180px;
+  height: 300px; /* Fixed card height */
 }
 
 .productCard img {
@@ -14,14 +16,24 @@
 }
 
 .productCard h3 {
-  margin-bottom: 10px;
+  margin-bottom: 5px; /* Adjust as needed */
+  font-size: 20px; /* Adjust the font size */
+}
+
+.productCard p {
+  font-size: 14px; /* Adjust the font size */
+  margin-bottom: 5px; /* Adjust as needed */
 }
 
 .productCard button {
+  position: absolute;
+  bottom: 10px; /* Adjust as needed */
+  left: 50%;
+  transform: translateX(-50%);
   background-color: #007bff;
   color: #fff;
   border: none;
-  padding: 8px 16px;
+  padding: 4px 64px;
   border-radius: 4px;
   cursor: pointer;
 }
