@@ -1,169 +1,19 @@
-// productsData.js
-import { Unasyn, Adeflo, Nexium, Prolix } from "../Assets/Images/index";
+// ProductData.jsx
+import { db } from '../Config/Config';
 
-const products = [
-  {
-    id: "unasyn-cat",
-    name: "Unasyn",
-    description: "Description of Product 1",
-    imageUrl: Unasyn,
-    price: "10",
-  },
-  {
-    id: "adeflo-cat",
-    name: "Adeflo",
-    description: "Description of Product 2",
-    imageUrl: Adeflo,
-    price: "10",
-  },
-  {
-    id: "nexium-cat",
-    name: "Adeflo",
-    description: "Description of Product 2",
-    imageUrl: Nexium,
-    price: "10",
-  },
-  {
-    id: "prolix-cat",
-    name: "Adeflo",
-    description: "Description of Product 2",
-    imageUrl: Prolix,
-    price: "10",
-  },
-  {
-    id: "prolix-cat",
-    name: "Adeflo",
-    description: "Description of Product 2",
-    imageUrl: Prolix,
-    price: "10",
-  },
-  {
-    id: "prolix-cat",
-    name: "Adeflo",
-    description: "Description of Product 2",
-    imageUrl: Prolix,
-    price: "10",
-  },
-  {
-    id: "prolix-cat",
-    name: "Adeflo",
-    description: "Description of Product 2",
-    imageUrl: Prolix,
-    price: "10",
-  },
-  {
-    id: "prolix-cat",
-    name: "Adeflo",
-    description: "Description of Product 2",
-    imageUrl: Prolix,
-    price: "10",
-  },
-  {
-    id: "prolix-cat",
-    name: "Adeflo",
-    description: "Description of Product 2",
-    imageUrl: Prolix,
-    price: "10",
-  },
-  {
-    id: "prolix-cat",
-    name: "Adeflo",
-    description: "Description of Product 2",
-    imageUrl: Prolix,
-    price: "10",
-  },
-  {
-    id: "prolix-cat",
-    name: "Adeflo",
-    description: "Description of Product 2",
-    imageUrl: Prolix,
-    price: "10",
-  },
-  {
-    id: "prolix-cat",
-    name: "Adeflo",
-    description: "Description of Product 2",
-    imageUrl: Prolix,
-    price: "10",
-  },
-  {
-    id: "prolix-cat",
-    name: "Adeflo",
-    description: "Description of Product 2",
-    imageUrl: Prolix,
-    price: "10",
-  },
-  {
-    id: "prolix-cat",
-    name: "Adeflo",
-    description: "Description of Product 2",
-    imageUrl: Prolix,
-    price: "10",
-  },
-  {
-    id: "prolix-cat",
-    name: "Adeflo",
-    description: "Description of Product 2",
-    imageUrl: Prolix,
-    price: "10",
-  },
-  {
-    id: "prolix-cat",
-    name: "Adeflo",
-    description: "Description of Product 2",
-    imageUrl: Prolix,
-    price: "10",
-  },
-  {
-    id: "prolix-cat",
-    name: "Adeflo",
-    description: "Description of Product 2",
-    imageUrl: Prolix,
-    price: "10",
-  },
-  {
-    id: "prolix-cat",
-    name: "Adeflo",
-    description: "Description of Product 2",
-    imageUrl: Prolix,
-    price: "10",
-  },
-  {
-    id: "prolix-cat",
-    name: "Adeflo",
-    description: "Description of Product 2",
-    imageUrl: Prolix,
-    price: "10",
-  },
-  {
-    id: "prolix-cat",
-    name: "Adeflo",
-    description: "Description of Product 2",
-    imageUrl: Prolix,
-    price: "10",
-  },
-  {
-    id: "prolix-cat",
-    name: "Adeflo",
-    description: "Description of Product 2",
-    imageUrl: Prolix,
-    price: "10",
-  },
-  {
-    id: "prolix-cat",
-    name: "Adeflo",
-    description: "Description of Product 2",
-    imageUrl: Prolix,
-    price: "10",
-  },
-  {
-    id: "prolix-cat",
-    name: "Adeflo",
-    description: "Description of Product 2",
-    imageUrl: Prolix,
-    price: "10",
-  },
-  // Add more products as needed
-];
+const getProductsFromFirestore = async () => {
+  try {
+    const productsRef = db.collection("product"); // Corrected collection name
+    const snapshot = await productsRef.get();
+    const products = snapshot.docs.map(doc => ({
+      id: doc.id,
+      ...doc.data()
+    }));
+    return products;
+  } catch (error) {
+    console.error("Error getting products:", error);
+    return [];
+  }
+};
 
-export default products;
+export default getProductsFromFirestore;
