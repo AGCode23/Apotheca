@@ -10,6 +10,7 @@ import {
 } from "../Assets/Images/index";
 import LoginPage from "./LoginPage";
 import { useStateValue } from "./StateProvider";
+import { auth } from "../Config/Config";
 
 const Header = () => {
   // To redirect to pharmassist page
@@ -41,7 +42,20 @@ const Header = () => {
     setIsOpenNav(!isOpenNav);
   };
 
-  const [{ cart }, dispatch] = useStateValue();
+  const [{ cart, loggedinuser }, dispatch] = useStateValue();
+  const logoutuser = () => {
+    if (loggedinuser) {
+      auth.signOut();
+    }
+  };
+
+  const checkForLogin = () => {
+    if (!loggedinuser) {
+      toggleModal();
+    } else {
+      logoutuser();
+    }
+  };
   return (
     <header>
       {/* Starts the code by indicating the home grid */}
@@ -117,8 +131,8 @@ const Header = () => {
               <div className={styles.headerAuth}>
                 <h2>Account</h2>
                 <h3>
-                  <button onClick={toggleModal} className={styles.authButton}>
-                    Login/Signup
+                  <button onClick={checkForLogin} className={styles.authButton}>
+                    {loggedinuser ? "Log Out" : "Login/Signup"}
                   </button>
                 </h3>
                 <LoginPage isOpen={isOpen} close={toggleModal} />

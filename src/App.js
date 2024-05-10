@@ -11,8 +11,31 @@ import CategoryPage from "./Components/CategoryPage";
 import SupportPage from "./Components/SupportPage";
 import AddProductsPage from "./Components/AddProductsPage";
 import Checkout from "./Components/Checkout";
+import { auth } from "./Config/Config";
+import { useStateValue } from "./Components/StateProvider";
+import { useEffect } from "react";
 
 export const App = () => {
+  const [{ loggedinuser }, dispatch] = useStateValue();
+  useEffect(() => {
+    const unsubscribe = auth.onAuthStateChanged((userauth) => {
+      if (userauth) {
+        dispatch({
+          type: "SET_LOGIN",
+          user: userauth,
+        });
+      } else {
+        dispatch({
+          type: "SET_LOGIN",
+          user: null,
+        });
+      }
+    });
+    return () => {
+      unsubscribe();
+    };
+  }, []);
+
   return (
     <Router>
       <Routes>

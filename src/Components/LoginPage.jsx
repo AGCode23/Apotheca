@@ -1,15 +1,37 @@
-// LoginPage.js
-
 import React, { useState } from "react";
 import styles from "./LoginPage.module.css";
-import { auth } from "../Config/Config"; // Import Firebase auth
+import { auth } from "../Config/Config";
+import { useNavigate } from "react-router-dom";
 
 function LoginPage({ isOpen, close }) {
+  const navigate = useNavigate();
+  const [useremail, setUserEmail] = useState("");
+  const [userpassword, setUserPassword] = useState("");
+
+  const loginuser = (event) => {
+    event.preventDefault();
+    auth
+      .signInWithEmailAndPassword(useremail, userpassword)
+      .then((auth) => {
+        navigate("/");
+        handleClose();
+      })
+      .catch((e) => alert(e.message));
+  };
+
+  const signupuser = (event) => {
+    event.preventDefault();
+    auth
+      .createUserWithEmailAndPassword(useremail, userpassword)
+      .then((auth) => {
+        navigate("/");
+        handleClose();
+      })
+      .catch((e) => alert(e.message));
+  };
+
   const [page, setPage] = useState("login");
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
   const [isVisible, setVisible] = useState(false);
-  const [error, setError] = useState(null);
 
   React.useEffect(() => {
     if (isOpen) {
@@ -25,26 +47,6 @@ function LoginPage({ isOpen, close }) {
       setVisible(false);
       close();
     }, 500); // This timeout should match the fadeOut animation duration
-  };
-
-  const handleLogin = async () => {
-    try {
-      await auth.signInWithEmailAndPassword(email, password);
-      console.log("User signed in successfully");
-      handleClose(); // Close the modal after successful login
-    } catch (error) {
-      setError(error.message);
-      console.error("Error signing in:", error.message);
-    }
-  };
-
-  const handleSignup = async () => {
-    try {
-      await auth.createUserWithEmailAndPassword(email, password);
-      handleClose(); // Close the modal after successful signup
-    } catch (error) {
-      setError(error.message);
-    }
   };
 
   if (!isVisible) return null;
@@ -78,52 +80,50 @@ function LoginPage({ isOpen, close }) {
             <div className={styles.containerForLogin}>
               <h2>Welcome Back!</h2>
               <input
+                value={useremail}
+                onChange={(event) => setUserEmail(event.target.value)}
                 type="email"
                 className={styles.formLogin}
                 placeholder="Email address"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
               />
               <input
+                value={userpassword}
+                onChange={(event) => setUserPassword(event.target.value)}
                 type="password"
                 className={styles.formLogin}
                 placeholder="Password"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
               />
-              <button className={styles.loginButtonStyles} onClick={handleLogin}>
+              <button onClick={loginuser} className={styles.loginButtonStyles}>
                 Sign In
               </button>
-              {error && <p className={styles.error}>{error}</p>}
             </div>
           </div>
           <div className={styles.modalPage}>
             <div className={styles.containerForLogin}>
               <h2>Sign up for free!</h2>
               <input
+                value={useremail}
+                onChange={(event) => setUserEmail(event.target.value)}
                 type="email"
                 className={styles.formLogin}
                 placeholder="Email address"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
               />
               <input
+                value={userpassword}
+                onChange={(event) => setUserPassword(event.target.value)}
                 type="password"
                 className={styles.formLogin}
                 placeholder="Password"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
               />
               <input
                 type="password"
                 className={styles.formLogin}
                 placeholder="Confirm Password"
               />
-              <button className={styles.loginButtonStyles} onClick={handleSignup}>
+              <button onClick={signupuser} className={styles.loginButtonStyles}>
                 Sign Up
               </button>
               <h3>By clicking Sign up, you agree to the terms of use.</h3>
-              {error && <p className={styles.error}>{error}</p>}
             </div>
           </div>
         </div>

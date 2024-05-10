@@ -8,3 +8,11 @@
 .checkoutTitle {
   margin-right: 10px;
 }
+
+.checkoutLeft {
+  flex-basis: 50%;
+}
+
+.checkoutRight {
+  flex-basis: 50%;
+}

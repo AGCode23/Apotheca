@@ -10,6 +10,7 @@ const ProductCard = ({ product }) => {
     dispatch({
       type: "ADD_TO_CART",
       item: {
+        description: product.description,
         id: product.id,
         imageURL: product.imageURL,
         title: product.title,
@@ -23,8 +24,8 @@ const ProductCard = ({ product }) => {
       <img src={product.imageURL} alt={product.name} />{" "}
       {/* Corrected image source */}
       <h3>{product.title}</h3>
-      <p>Price: ${product.price}</p>
-      {/* <p>{product.description}</p> */}
+      <p>Price: ₱{product.price}</p>
+      <p>{product.description}</p>
       <button onClick={addToCart}>Buy</button>
     </div>
   );

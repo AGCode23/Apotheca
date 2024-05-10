@@ -1,0 +1,19 @@
+.productCart {
+  display: flex;
+  gap: 70px;
+  margin: 20px 0;
+}
+
+.productCartImage {
+  width: 200px;
+  object-fit: contain;
+  border: 1px solid #ccc;
+}
+
+.productCartTitle {
+  font-size: 1.5rem;
+}
+
+.productCartPrice {
+  font-size: 1.2rem;
+}
