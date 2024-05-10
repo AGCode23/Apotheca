@@ -93,6 +93,16 @@
   font-size: 0.8rem;
 }
 
+/* Cart CSS */
+.cartContainer {
+  display: flex;
+  gap: 5px;
+}
+
+.navHeader {
+  text-decoration: none;
+}
+
 /* Enclosing Responsive CSS */
 .enclosingForResponsive {
   display: flex;

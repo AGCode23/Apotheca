@@ -3,9 +3,9 @@ import ProductCardCat from "./ProductCardCat";
 import styles from "./ProductListCat.module.css";
 import getProductsFromFirestore from "./ProductData";
 
-const ProductListCat = ({ onBuyClick }) => {
+const ProductListCat = () => {
   const [currentPage, setCurrentPage] = useState(1);
-  const productsPerPage = 15;
+  const productsPerPage = 16;
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
@@ -23,7 +23,10 @@ const ProductListCat = ({ onBuyClick }) => {
   // Calculate indexes for pagination
   const indexOfLastProduct = currentPage * productsPerPage;
   const indexOfFirstProduct = indexOfLastProduct - productsPerPage;
-  const currentProducts = products.slice(indexOfFirstProduct, indexOfLastProduct);
+  const currentProducts = products.slice(
+    indexOfFirstProduct,
+    indexOfLastProduct
+  );
 
   const totalPages = Math.ceil(products.length / productsPerPage);
 
@@ -46,12 +49,14 @@ const ProductListCat = ({ onBuyClick }) => {
           <ProductCardCat
             key={index} // Ensure each key is unique
             product={product}
-            onBuyClick={onBuyClick}
           />
         ))}
       </div>
       <ul className={styles.pagination}>
-        <li onClick={prevPage} className={currentPage === 1 ? styles.disabled : ""}>
+        <li
+          onClick={prevPage}
+          className={currentPage === 1 ? styles.disabled : ""}
+        >
           Previous
         </li>
         {Array.from({ length: totalPages }, (_, index) => (
@@ -63,7 +68,10 @@ const ProductListCat = ({ onBuyClick }) => {
             {index + 1}
           </li>
         ))}
-        <li onClick={nextPage} className={currentPage === totalPages ? styles.disabled : ""}>
+        <li
+          onClick={nextPage}
+          className={currentPage === totalPages ? styles.disabled : ""}
+        >
           Next
         </li>
       </ul>

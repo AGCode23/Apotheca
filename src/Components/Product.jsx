@@ -8,7 +8,6 @@ const Product = ({ name, price, image }) => {
       <img src={image} alt={name} className={styles.productImage} />
       <h3>{name}</h3>
       <p>₱{price}</p>
-      <button>Buy</button>
     </div>
   );
 };

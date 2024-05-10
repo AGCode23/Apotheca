@@ -9,6 +9,7 @@ import {
   WishLogo,
 } from "../Assets/Images/index";
 import LoginPage from "./LoginPage";
+import { useStateValue } from "./StateProvider";
 
 const Header = () => {
   // To redirect to pharmassist page
@@ -18,6 +19,10 @@ const Header = () => {
 
   const handleClickHome = () => {
     window.location.href = "/";
+  };
+
+  const handleClickCart = () => {
+    window.location.href = "/checkout";
   };
 
   // For search but placeholder for the meantime
@@ -35,6 +40,8 @@ const Header = () => {
   const toggleNavbar = () => {
     setIsOpenNav(!isOpenNav);
   };
+
+  const [{ cart }, dispatch] = useStateValue();
   return (
     <header>
       {/* Starts the code by indicating the home grid */}
@@ -98,14 +105,14 @@ const Header = () => {
                   <h3>PharmAssist</h3>
                 </div>
               </div>
-              <div
-                className={`${styles.iconContainer} ${styles.toHideElement}`}
-              >
-                <img src={WishLogo} alt="wishlist" />
-              </div>
-              <div className={styles.iconContainer}>
-                <img className={styles.cartIcon} src={CartIcon} alt="cart" />
-              </div>
+              <NavLink to="/checkout" className={styles.navHeader}>
+                <div
+                  className={`${styles.iconContainer} ${styles.cartContainer}`}
+                >
+                  <img className={styles.cartIcon} src={CartIcon} alt="cart" />
+                  <p className={styles.cartNumber}>{cart?.length}</p>
+                </div>
+              </NavLink>
               {/* Account section */}
               <div className={styles.headerAuth}>
                 <h2>Account</h2>

@@ -1,0 +1,10 @@
+.checkout {
+  display: flex;
+  color: white;
+  padding: 30px;
+  height: max-content;
+}
+
+.checkoutTitle {
+  margin-right: 10px;
+}
