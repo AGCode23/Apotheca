@@ -103,6 +103,12 @@
   text-decoration: none;
 }
 
+/* Profile Button CSS */
+.profileButton {
+  border: none;
+  background: transparent;
+}
+
 /* Enclosing Responsive CSS */
 .enclosingForResponsive {
   display: flex;

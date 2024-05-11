@@ -14,6 +14,7 @@ import Checkout from "./Components/Checkout";
 import { auth } from "./Config/Config";
 import { useStateValue } from "./Components/StateProvider";
 import { useEffect } from "react";
+import OrderPage from "./Components/OrderPage";
 
 export const App = () => {
   const [{ loggedinuser }, dispatch] = useStateValue();
@@ -51,6 +52,7 @@ export const App = () => {
         <Route path="/support" element={<SupportPage />} />
         <Route path="/add-product" element={<AddProductsPage />} />
         <Route path="/checkout" element={<Checkout />} />
+        <Route path="/order" element={<OrderPage />} />
       </Routes>
       <FooterPage />
     </Router>

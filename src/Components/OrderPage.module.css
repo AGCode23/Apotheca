@@ -1,0 +1,46 @@
+/* .orderMain {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+} */
+
+.orderGrid {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  color: white;
+}
+
+.orderBox {
+  width: 300px;
+  height: 300px;
+  border: 1px solid white;
+}
+
+.orderLeft,
+.orderRight {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.leftButton,
+.rightButton {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.leftButton button,
+.rightButton button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 10px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.leftButton button:hover,
+.rightButton button:hover {
+  background-color: #0056b3;
+}

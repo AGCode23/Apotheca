@@ -1,4 +1,3 @@
-// ProductCardCat.js
 import React from "react";
 import styles from "./ProductCardCat.module.css";
 import { useStateValue } from "./StateProvider";
@@ -21,11 +20,12 @@ const ProductCard = ({ product }) => {
 
   return (
     <div className={styles.productCard}>
-      <img src={product.imageURL} alt={product.name} />{" "}
-      {/* Corrected image source */}
+      <img src={product.imageURL} alt={product.name} />
+      <div className={styles.descriptionOverlay}>
+        <p>{product.description}</p>
+      </div>
       <h3>{product.title}</h3>
       <p>Price: ₱{product.price}</p>
-      <p>{product.description}</p>
       <button onClick={addToCart}>Buy</button>
     </div>
   );

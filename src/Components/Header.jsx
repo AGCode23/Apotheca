@@ -138,7 +138,9 @@ const Header = () => {
                 <LoginPage isOpen={isOpen} close={toggleModal} />
               </div>
               <div className={styles.iconContainer}>
-                <img src={ProfLogo} alt="profile-logo" />
+                <NavLink to="/order" className={styles.profileButton}>
+                  <img src={ProfLogo} alt="profile-logo" />
+                </NavLink>
               </div>
             </div>
           </div>
