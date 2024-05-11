@@ -1,12 +1,12 @@
-# Getting Started with Create React App
+# Apotheca: Online Pharmacy Store
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Follow the direction below.
 
 ## DO THIS FIRST!
 
-### `npm i`
+### `npm i --force`
 
-Execute `npm i` first to install all dependencies of the web app.
+Execute `npm i --force` first to install all dependencies of the web app.
 
 ## Available Scripts
 
