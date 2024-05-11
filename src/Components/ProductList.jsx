@@ -1,4 +1,4 @@
-// ProductList.js
+// ProductList.jss
 import React from "react";
 import Product from "./Product";
 import styles from "./ProductList.module.css";

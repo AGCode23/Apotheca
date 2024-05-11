@@ -1,8 +1,8 @@
 .checkout {
   display: flex;
   color: white;
-  padding: 30px;
   height: max-content;
+  margin: 0 50px;
 }
 
 .checkoutTitle {
@@ -14,5 +14,7 @@
 }
 
 .checkoutRight {
+  display: flex;
+  justify-content: center;
   flex-basis: 50%;
 }

@@ -18,14 +18,6 @@ const Header = () => {
     window.location.href = "/pharmassist";
   };
 
-  const handleClickHome = () => {
-    window.location.href = "/";
-  };
-
-  const handleClickCart = () => {
-    window.location.href = "/checkout";
-  };
-
   // For search but placeholder for the meantime
   const [searchTerm, setSearchTerm] = useState("");
   const handleSearchChange = (event) => {
@@ -63,21 +55,18 @@ const Header = () => {
         {/* Primary nav */}
         <div className={styles.headerPrimaryNav}>
           {/* Container for logo */}
-          <div
-            className={styles.apothecaLogo}
-            role="button"
-            tabIndex={0}
-            onClick={handleClickHome}
-          >
-            <div className={styles.homeLogoContainer}>
-              <img src={Logo} alt="logo" height={75} />
-              {/* To wrap the title and tagline */}
-              <div className={styles.apothecaTitle}>
-                <h2>Apotheca</h2>
-                <h3>Online Medical Store</h3>
+          <NavLink to="/" className={styles.navHeader}>
+            <div className={styles.apothecaLogo}>
+              <div className={styles.homeLogoContainer}>
+                <img src={Logo} alt="logo" height={75} />
+                {/* To wrap the title and tagline */}
+                <div className={styles.apothecaTitle}>
+                  <h2>Apotheca</h2>
+                  <h3>Online Medical Store</h3>
+                </div>
               </div>
             </div>
-          </div>
+          </NavLink>
 
           {/* Search container */}
           <div className={styles.enclosingForResponsive}>
@@ -106,19 +95,16 @@ const Header = () => {
             </div>
             {/* Button container */}
             <div className={styles.headerButtonContainer}>
-              <div
-                className={styles.pharmAssistButton}
-                role="button"
-                tabIndex={0}
-                onClick={handleClick}
-              >
-                <div className={styles.pharmLogo}>
-                  <img src={PharmLogo} alt="PharmLogo" height={20} />
+              <NavLink to="/pharmassist" className={styles.navHeader}>
+                <div className={styles.pharmAssistButton}>
+                  <div className={styles.pharmLogo}>
+                    <img src={PharmLogo} alt="PharmLogo" height={20} />
+                  </div>
+                  <div className={styles.pharmAssist}>
+                    <h3>PharmAssist</h3>
+                  </div>
                 </div>
-                <div className={styles.pharmAssist}>
-                  <h3>PharmAssist</h3>
-                </div>
-              </div>
+              </NavLink>
               <NavLink to="/checkout" className={styles.navHeader}>
                 <div
                   className={`${styles.iconContainer} ${styles.cartContainer}`}
@@ -169,16 +155,6 @@ const Header = () => {
           </h2>
           <h2>
             <NavLink
-              to="/generic"
-              className={({ isActive }) =>
-                isActive ? styles.active : styles.notActive
-              }
-            >
-              Apotheca Generics
-            </NavLink>
-          </h2>
-          <h2>
-            <NavLink
               to="/blog"
               className={({ isActive }) =>
                 isActive ? styles.active : styles.notActive
@@ -218,7 +194,6 @@ const Header = () => {
           {/* Your navigation links here */}
           <a href="/">Home</a>
           <a href="/category">Categories</a>
-          <a href="/generic">Apotheca Generics</a>
           <a href="/blog">Blog</a>
           <a href="/faqs">Faqs</a>
           <a href="/support">Support</a>

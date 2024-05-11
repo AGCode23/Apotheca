@@ -1,3 +1,4 @@
+/* CategoryPage.module.css */
 .navContainer {
   display: flex;
   align-items: center;
@@ -29,10 +30,39 @@
 
 .listSideNav li {
   margin-left: 20px;
+  cursor: pointer; /* Added to enable clickable behavior */
+}
+
+.listSideNav li.active {
+  color: #68c5c3;
+}
+
+.listSideNav li.active:hover {
+  color: #55a19f;
+}
+
+.listSideNav li:hover {
+  color: #b3b3b3;
 }
 
 .rightNav {
   display: flex;
   margin-left: 30px;
   flex-basis: 70%;
+}
+
+.allProducts {
+  cursor: pointer;
+}
+
+.allProducts.active {
+  color: #68c5c3;
+}
+
+.allProducts:hover {
+  color: #b3b3b3;
+}
+
+.allProducts.active:hover {
+  color: #55a19f;
 }

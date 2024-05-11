@@ -6,96 +6,72 @@ import {
   ADS2,
   ADS3,
   ADS5,
-  Adeflo,
-  Prolix,
-  Nexium,
-  Unasyn,
+  adv,
+  alx,
+  amox,
+  ben,
+  bio,
+  cefalin,
+  cet,
+  fex,
+  lip,
 } from "../Assets/Images/index";
+import { NavLink } from "react-router-dom";
 
 const products = [
   {
     id: 1,
-    name: "Unasyn",
-    price: 10,
-    image: Unasyn,
+    name: "Advil Ibuprofen",
+    price: 40,
+    image: adv,
   },
   {
     id: 2,
-    name: "Nexium",
-    price: 15,
-    image: Nexium,
+    name: "Alaxan Ibuprofen Paracetamol",
+    price: 30,
+    image: alx,
   },
   {
     id: 3,
-    name: "Product 2",
-    price: 15,
-    image: Adeflo,
+    name: "Amoxil Amoxicillin",
+    price: 150,
+    image: amox,
   },
   {
     id: 4,
-    name: "Product 2",
-    price: 15,
-    image: Prolix,
+    name: "Benadryl Diphenhydramine",
+    price: 80,
+    image: ben,
   },
   {
     id: 5,
-    name: "Product 2",
-    price: 15,
-    image: Nexium,
+    name: "Biogesic Paracetamol",
+    price: 30,
+    image: bio,
   },
   {
-    id: 5,
-    name: "Product 2",
-    price: 15,
-    image: Nexium,
+    id: 6,
+    name: "Cefalin Cefalix",
+    price: 200,
+    image: cefalin,
   },
   {
-    id: 5,
-    name: "Product 2",
-    price: 15,
-    image: Nexium,
+    id: 7,
+    name: "Zytrec Cetirizine",
+    price: 80,
+    image: cet,
   },
   {
-    id: 5,
-    name: "Product 2",
-    price: 15,
-    image: Nexium,
+    id: 8,
+    name: "Allegra Fexofenadine",
+    price: 120,
+    image: fex,
   },
   {
-    id: 5,
-    name: "Product 2",
-    price: 15,
-    image: Nexium,
-  },
-  {
-    id: 5,
-    name: "Product 2",
-    price: 15,
-    image: Nexium,
-  },
-  {
-    id: 5,
-    name: "Product 2",
-    price: 15,
-    image: Nexium,
-  },
-  {
-    id: 5,
-    name: "Product 2",
-    price: 15,
-    image: Nexium,
-  },
-  {
-    id: 5,
-    name: "Product 2",
-    price: 15,
-    image: Nexium,
-  },
-  {
-    id: 5,
-    name: "Product 2",
-    price: 15,
-    image: Nexium,
+    id: 9,
+    name: "Lipitor Atorvastatin",
+    price: 400,
+    image: lip,
   },
 ];
 
@@ -153,7 +129,9 @@ const HomePage = () => {
           <div className="home-product-container">
             <div className="home-heading">
               <h2>FEATURED PRODUCTS</h2>
-              <p>See All</p>
+              <NavLink to="/category">
+                <p>See All</p>
+              </NavLink>
             </div>
             <div className="product-list-home">
               <div className="scroll-container">
@@ -164,19 +142,6 @@ const HomePage = () => {
         </div>
         <div className="home-ads">
           <img className="ads" src={ADS5} alt="ads5" />
-        </div>
-        <div className="home-container">
-          <div className="home-product-container">
-            <div className="home-heading">
-              <h2>GENERIC PRODUCTS</h2>
-              <p>See All</p>
-            </div>
-            <div className="product-list-home">
-              <div className="scroll-container">
-                <ProductList products={products} />
-              </div>
-            </div>
-          </div>
         </div>
       </body>
     </div>

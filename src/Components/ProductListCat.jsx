@@ -1,11 +1,12 @@
+// ProductListCat.jsx
 import React, { useState, useEffect } from "react";
 import ProductCardCat from "./ProductCardCat";
 import styles from "./ProductListCat.module.css";
 import getProductsFromFirestore from "./ProductData";
 
-const ProductListCat = () => {
+const ProductListCat = ({ categoryCode }) => {
   const [currentPage, setCurrentPage] = useState(1);
-  const productsPerPage = 16;
+  const productsPerPage = 15;
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
@@ -20,15 +21,20 @@ const ProductListCat = () => {
     fetchData();
   }, []);
 
+  // Filter products based on the category code
+  const filteredProducts = categoryCode
+    ? products.filter((product) => product.id.startsWith(categoryCode))
+    : products;
+
   // Calculate indexes for pagination
   const indexOfLastProduct = currentPage * productsPerPage;
   const indexOfFirstProduct = indexOfLastProduct - productsPerPage;
-  const currentProducts = products.slice(
+  const currentProducts = filteredProducts.slice(
     indexOfFirstProduct,
     indexOfLastProduct
   );
 
-  const totalPages = Math.ceil(products.length / productsPerPage);
+  const totalPages = Math.ceil(filteredProducts.length / productsPerPage);
 
   const nextPage = () => {
     if (currentPage < totalPages) {

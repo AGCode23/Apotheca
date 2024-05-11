@@ -3,8 +3,9 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  justify-content: space-around;
   gap: 10px;
-  padding: 20px;
+  padding: 20px 25px;
   border: 1px solid #ccc;
   border-radius: 10px;
   scroll-snap-align: start; /* Snap each product to the start of the container */
@@ -12,11 +13,19 @@
 
 .product h3 {
   font-size: 1.2rem;
+  text-wrap: wrap;
+  text-align: start;
   margin: 0;
 }
 
 .product p {
   margin: 0;
+}
+
+.productImageDiv {
+  display: flex;
+  justify-content: center;
+  width: 100%;
 }
 
 .productImage {

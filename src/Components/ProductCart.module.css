@@ -1,13 +1,19 @@
+/* ProductCart.module.css */
 .productCart {
   display: flex;
-  gap: 70px;
-  margin: 20px 0;
+  gap: 80px;
+  margin: 30px 0;
 }
 
 .productCartImage {
-  width: 200px;
-  object-fit: contain;
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
   border: 1px solid #ccc;
+}
+
+.productCartInfo {
+  flex: 1; /* Take remaining space */
 }
 
 .productCartTitle {
@@ -16,4 +22,30 @@
 
 .productCartPrice {
   font-size: 1.2rem;
+}
+
+.productCartInfo button {
+  border: none;
+  padding: 10px 20px;
+  background: #007bff;
+  color: white;
+  border-radius: 5px;
+}
+
+.productCartInfo button:hover {
+  background: #0056b3;
+}
+
+.productCartButtons button {
+  padding: 8px 16px;
+  border: none;
+  background-color: #ff6347; /* Red color */
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.productCartButtons button:hover {
+  background-color: #cc4b37; /* Darker red on hover */
 }

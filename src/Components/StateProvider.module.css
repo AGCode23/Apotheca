@@ -1,0 +1,14 @@
+/* StateProvider.module.css */
+.checkoutButton {
+  padding: 8px 16px;
+  border: none;
+  background-color: #007bff; /* Blue color */
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.checkoutButton:hover {
+  background-color: #0056b3; /* Darker blue on hover */
+}

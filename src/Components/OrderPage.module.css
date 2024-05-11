@@ -1,33 +1,37 @@
-/* .orderMain {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-} */
-
 .orderGrid {
   display: flex;
-  align-items: center;
   justify-content: space-evenly;
   color: white;
 }
 
-.orderBox {
-  width: 300px;
-  height: 300px;
-  border: 1px solid white;
-}
-
-.orderLeft,
-.orderRight {
+.orderLeft {
   display: flex;
   flex-direction: column;
   gap: 20px;
+  align-items: flex-start;
+}
+
+.inputGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.inputGroup label {
+  font-weight: bold;
+}
+
+.inputGroup input {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 300px;
 }
 
 .leftButton,
 .rightButton {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: center;
 }
 
 .leftButton button,
@@ -35,7 +39,7 @@
   background-color: #007bff;
   color: #fff;
   border: none;
-  padding: 10px;
+  padding: 10px 20px;
   border-radius: 4px;
   cursor: pointer;
 }
@@ -43,4 +47,46 @@
 .leftButton button:hover,
 .rightButton button:hover {
   background-color: #0056b3;
+}
+
+.uploadButton {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  display: inline-block;
+  text-align: center;
+  width: 120px;
+}
+
+.uploadButton:hover {
+  background-color: #0056b3;
+}
+
+.highlightedEmail {
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+/* Add styles for the order table */
+.orderTable {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.orderTable th,
+.orderTable td {
+  border: 1px solid #ccc;
+  padding: 8px;
+}
+
+.orderTable th {
+  background-color: #007bff;
+  color: white;
+}
+
+.emailText {
+  font-size: 1.5em;
 }

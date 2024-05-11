@@ -3,6 +3,8 @@
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 1fr 0.5fr;
+  margin-bottom: 50px;
+  box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.75);
 }
 
 .homeGrid h1,
@@ -72,7 +74,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background: #479eb6;
+  background: #007bff;
   width: 100px;
   padding: 10px;
   gap: 3px;
@@ -80,7 +82,7 @@
 }
 
 .pharmAssistButton:hover {
-  background: #36788b;
+  background: #0056b3;
 }
 
 .pharmAssist {
@@ -144,13 +146,13 @@
 .authButton {
   border: none;
   border-radius: 5px;
-  background: #479eb6;
+  background: #007bff;
   padding: 10px;
   color: white;
 }
 
 .authButton:hover {
-  background: #36788b;
+  background: #0056b3;
 }
 
 /* Sub Nav CSS */
