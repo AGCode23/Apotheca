@@ -69,3 +69,8 @@ Gives full control over build tools and configurations like Webpack, Babel, etc.
 - [Troubleshooting Build Issues](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
 
 ---
+
+## ⚠️ Disclaimer
+
+This is my **first** project using **React.js**, so please bear with the spaghetti code and non-standard practices. I'm learning as I go, and the codebase may not be the most polished or optimized. Your feedback is highly appreciated!  
+Thanks for understanding!
